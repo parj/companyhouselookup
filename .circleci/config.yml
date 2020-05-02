@@ -4,8 +4,6 @@
 # Check https://circleci.com/docs/2.0/language-java/ for more details
 #
 version: 2.1
-orbs:
-  coveralls: coveralls/coveralls@1.0.6
 
 jobs:
   build:
@@ -58,8 +56,6 @@ jobs:
           path: ~/test-results
       - store_artifacts:
           path: ~/test-results/junit
-
-      - coveralls/upload
 
       - run:
           name: Upload to codecov

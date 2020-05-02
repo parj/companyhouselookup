@@ -60,7 +60,7 @@ jobs:
           path: ~/test-results/junit
 
       - coveralls/upload
-      -
+
       - run:
           name: Upload to codecov
           command: bash <(curl -s https://codecov.io/bash)

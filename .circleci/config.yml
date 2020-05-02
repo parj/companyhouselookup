@@ -185,7 +185,7 @@ workflows:
             branches:
               ignore:
                 - release
-      - openjdk-13:
+      - openjdk-15:
           filters:
             branches:
               ignore:

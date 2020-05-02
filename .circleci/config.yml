@@ -3,7 +3,10 @@
 #
 # Check https://circleci.com/docs/2.0/language-java/ for more details
 #
-version: 2
+version: 2.1
+orbs:
+  coveralls: coveralls/coveralls@1.0.6
+
 jobs:
   build:
     docker:
@@ -56,6 +59,11 @@ jobs:
       - store_artifacts:
           path: ~/test-results/junit
 
+      - coveralls/upload
+      -
+      - run:
+          name: Upload to codecov
+          command: bash <(curl -s https://codecov.io/bash)
 
   openjdk-8:
     docker:
@@ -99,7 +107,7 @@ jobs:
       # run tests!
       - run:
           name: Maven test
-          command: mvn test jacoco:report coveralls:report
+          command: mvn test
 
       - run:
           name: Save test results
@@ -161,10 +169,6 @@ jobs:
             mkdir -p ~/test-results/junit/
             find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/test-results/junit/ \;
           when: always
-
-      - run:
-          name: Upload to codecov
-          command: bash <(curl -s https://codecov.io/bash)
 
       - store_test_results:
           path: ~/test-results

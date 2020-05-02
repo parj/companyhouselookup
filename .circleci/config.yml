@@ -98,8 +98,8 @@ jobs:
 
       # run tests!
       - run:
-          name: Build Artifact, Release Artifact to Nexus, Build Docker image
-          command: mvn test
+          name: Maven test
+          command: mvn test jacoco:report coveralls:report
 
       - run:
           name: Save test results
@@ -112,7 +112,7 @@ jobs:
           path: ~/test-results
       - store_artifacts:
           path: ~/test-results/junit
-  openjdk-13:
+  openjdk-15:
     docker:
       - image: circleci/openjdk:15-jdk-buster
 
@@ -152,7 +152,7 @@ jobs:
           command: .ci/build.sh --import-key
 
       - run:
-          name: Build Artifact, Release Artifact to Nexus, Build Docker image
+          name: Maven test
           command: mvn test
 
       - run:
@@ -161,6 +161,10 @@ jobs:
             mkdir -p ~/test-results/junit/
             find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/test-results/junit/ \;
           when: always
+
+      - run:
+          name: Upload to codecov
+          command: bash <(curl -s https://codecov.io/bash)
 
       - store_test_results:
           path: ~/test-results

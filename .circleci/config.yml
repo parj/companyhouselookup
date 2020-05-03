@@ -26,7 +26,9 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: mvn dependency:go-offline
+      - run:
+          name: Maven dependency
+          command: mvn dependency:go-offline
 
       - save_cache:
           paths:
@@ -51,6 +53,10 @@ jobs:
             mkdir -p ~/test-results/junit/
             find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/test-results/junit/ \;
           when: always
+
+      - run:
+          name: Upload to codecov
+          command: bash <(curl -s https://codecov.io/bash)
 
       - store_test_results:
           path: ~/test-results
@@ -95,15 +101,6 @@ jobs:
       - run:
           name: Add GPG key
           command: .ci/build.sh --import-key
-
-      # run tests!
-      - run:
-          name: Maven test
-          command: mvn test cobertura:cobertura
-
-      - run:
-          name: Upload to codecov
-          command: bash <(curl -s https://codecov.io/bash)
 
       - run:
           name: Save test results

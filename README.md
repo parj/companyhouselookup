@@ -1,4 +1,4 @@
-![CircleCI](https://img.shields.io/circleci/build/github/parj/companyhouselookup) [![DepShield Badge](https://depshield.sonatype.org/badges/parj/companyhouselookup/depshield.svg)](https://depshield.github.io) [![codecov](https://codecov.io/gh/parj/companyhouselookup/branch/master/graph/badge.svg)](https://codecov.io/gh/parj/companyhouselookup)
+![CircleCI](https://img.shields.io/circleci/build/github/parj/companyhouselookup) [![DepShield Badge](https://depshield.sonatype.org/badges/parj/companyhouselookup/depshield.svg)](https://depshield.github.io) [![codecov](https://codecov.io/gh/parj/companyhouselookup/branch/master/graph/badge.svg)](https://codecov.io/gh/parj/companyhouselookup) [![Kritika Analysis Status](https://kritika.io/users/parj/repos/6543672415945162/heads/master/status.svg)](https://kritika.io/users/parj/repos/6543672415945162/heads/master/)
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fparj%2Fcompanyhouselookup.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fparj%2Fcompanyhouselookup?ref=badge_large)
 

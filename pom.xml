@@ -8,6 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>companyhouselookup</name>
     <description>Company House Lookup microservice</description>
+    <url>https://github.com/parj/companyhouselookup</url>
 
     <licenses>
         <license>
@@ -15,6 +16,15 @@
             <url>https://unlicense.org</url>
         </license>
     </licenses>
+
+    <developers>
+        <developer>
+            <name>Parjanya Mudunuri</name>
+            <email>dork.github@gmail.com</email>
+            <organization>Private</organization>
+            <organizationUrl>https://github.com/parj/</organizationUrl>
+        </developer>
+    </developers>
 
     <scm>
         <url>https://github.com/parj/companyhouselookup</url>

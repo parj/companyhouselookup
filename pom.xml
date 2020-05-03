@@ -4,7 +4,7 @@
 
     <groupId>io.github.parj</groupId>
     <artifactId>companyhouselookup</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3-SNAPSHOT</version>
     <name>companyhouselookup</name>
     <description>Company House Lookup microservice</description>
     <url>https://github.com/parj/companyhouselookup</url>
@@ -29,7 +29,7 @@
         <url>https://github.com/parj/companyhouselookup</url>
         <connection>scm:git:git@github.com:parj/companyhouselookup.git</connection>
         <developerConnection>scm:git:git@github.com:parj/companyhouselookup.git</developerConnection>
-      <tag>companyhouselookup-0.0.2</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <distributionManagement>

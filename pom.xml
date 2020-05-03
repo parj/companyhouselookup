@@ -102,9 +102,9 @@
                 <version>2.7</version>
                 <configuration>
                     <instrumentation>
-                        <excludes>
-                            <exclude>**/model/*.class</exclude>
-                        </excludes>
+                        <ignores>
+                            <ignore>**/model/*.class</ignore>
+                        </ignores>
                     </instrumentation>
                     <check></check>
                     <formats>
